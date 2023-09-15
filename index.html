@@ -4,28 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script defer src="app.js"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav id="nav">
-        <ul>
-            <li>
-                <a href="">Home</a>
-            </li>
-            <li>
-                <a href="">About</a>
-            </li>
-            <li>
-                <a href="">Contact</a>
-            </li>
-        </ul>
-    </nav>
-    <div id="burger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
-    </div>
     
-    <script src="app.js"></script>
+   
+    
+    <header>
+        <h1>Online Store</h1>
+        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+    </header>
+
+    <main>
+
+        <div class="slider__wrapper">
+            <div id="arrow-left">
+                <img src="./images/al.svg" alt="">
+            </div>
+            <div id="arrow-right">
+                <img src="./images/ar.svg" alt="">
+            </div>
+            <div id="slider"></div>
+        </div>
+
+        <div class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </div>
+        
+        <section class="catalog">
+            <div class="filter-sort">
+                <label for="category-filter">Filter by Category:</label>
+                <select id="category-filter" onchange="filterProducts()">
+                    <option value="all">All</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                </select>
+
+                <button id="sort-button">Sort by Price</button>
+                
+                <input type="number" id="min-price" placeholder="Min Price">
+                <input type="number" id="max-price" placeholder="Max Price">
+                <button id="apply-price-filter">Apply Price Filter</button>              
+                <button id="sort-max">Sort by Max Price</button>              
+                <button id="sort-min">Sort by Min Price</button>
+
+            </div>
+            <div class="product-list" id="product-list">  
+            </div>
+        </section>
+        <div class="footer">
+            <p>&copy; 2023 This web site was made by Dan Dragan as a final exam on JS. All rights reserved.</p>
+        </div>
+    </main>
+    
 </body>
 </html>
