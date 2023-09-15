@@ -1,0 +1,157 @@
+:root {
+  --gradient: linear-gradient(90deg, #8E2DE2, #4A00E0);
+  --bgColor: #eee;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  height: 100px;
+  background-color: var(--bgColor);
+}
+
+.tools__menu {
+  width: 100%;
+  height: 100%;
+}
+
+.menu__content {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.tools {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tool,
+.tool label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tool input {
+  display: none;
+}
+
+.tool input[type="radio"]:checked + label {
+  background: var(--gradient);
+}
+
+.tool label {
+  min-width: 100px;
+  padding: 5px 10px;
+  height: 50px;
+  border-radius: 10px;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.tool label img {
+  height: 50%;
+}
+
+.tool label small {
+  font-size: 18px;
+}
+
+.tool input[type="radio"]:checked + label small {
+  color: white;
+}
+
+.tool input[type="radio"]:checked + label img {
+  filter: invert(100%);
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.option {
+  min-width: 150px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.option button,
+.option input[type="color"] {
+  min-width: 100%;
+  height: 50%;
+  border: 0;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.option input[type="color"] {
+  height: 30px;
+}
+
+.option button {
+  padding: 5px 10px;
+}
+
+.option button:hover {
+  color: white;
+  background: var(--gradient);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;  
+  background: white;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: var(--gradient);
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--gradient);
+  cursor: pointer;
+}
+
+#canvas {
+  height: 700px;
+  width: 1200px;
+  border: 3px solid var(--bgColor);
+  display: block;
+  margin: 50px auto;
+}
